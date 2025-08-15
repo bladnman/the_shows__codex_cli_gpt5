@@ -101,10 +101,91 @@ export type TmdbDetails = TmdbShow & {
   number_of_seasons?: number;
   number_of_episodes?: number;
   homepage?: string | null;
+  status?: string | null;
+  budget?: number | null; // movie
+  revenue?: number | null; // movie
+  created_by?: { id: number; name: string }[]; // tv
+  networks?: { id: number; name: string; logo_path: string | null }[]; // tv
+  production_companies?: { id: number; name: string }[];
+  seasons?: {
+    id: number;
+    name: string;
+    season_number: number;
+    episode_count?: number;
+    air_date?: string | null;
+    poster_path: string | null;
+  }[]; // tv
 };
 
 export async function getDetails(media: MediaType, id: string | number) {
   return tmdb<TmdbDetails>(`/${media}/${id}`, { revalidate: 3600, ttlMs: 3600_000 });
+}
+
+// Credits (cast/crew)
+export type TmdbPerson = {
+  id: number;
+  name: string;
+  profile_path: string | null;
+};
+
+export type TmdbCast = TmdbPerson & {
+  character?: string;
+  roles?: { character: string }[]; // tv aggregate sometimes
+  order?: number;
+};
+
+export type TmdbCreditsResponse = {
+  id: number;
+  cast: TmdbCast[];
+};
+
+export async function getCredits(media: MediaType, id: string | number) {
+  return tmdb<TmdbCreditsResponse>(`/${media}/${id}/credits`, { revalidate: 3600, ttlMs: 3600_000 });
+}
+
+// Videos (trailers)
+export type TmdbVideo = {
+  id: string;
+  key: string; // YouTube key
+  name: string;
+  site: string; // YouTube, etc
+  type: string; // Trailer, Teaser
+  official: boolean;
+};
+
+export type TmdbVideosResponse = {
+  id: number;
+  results: TmdbVideo[];
+};
+
+export async function getVideos(media: MediaType, id: string | number) {
+  return tmdb<TmdbVideosResponse>(`/${media}/${id}/videos`, { revalidate: 3600, ttlMs: 3600_000 });
+}
+
+// Watch providers
+export type TmdbWatchProvidersResponse = {
+  id: number;
+  results: {
+    [country: string]: {
+      link: string;
+      flatrate?: { provider_id: number; provider_name: string; logo_path: string | null }[];
+      rent?: { provider_id: number; provider_name: string; logo_path: string | null }[];
+      buy?: { provider_id: number; provider_name: string; logo_path: string | null }[];
+    };
+  };
+};
+
+export async function getWatchProviders(media: MediaType, id: string | number) {
+  return tmdb<TmdbWatchProvidersResponse>(`/${media}/${id}/watch/providers`, { revalidate: 3600, ttlMs: 3600_000 });
+}
+
+// Recommendations and Similar
+export async function getRecommendations(media: MediaType, id: string | number) {
+  return tmdb<TmdbPaged<TmdbShow>>(`/${media}/${id}/recommendations`, { revalidate: 3600, ttlMs: 3600_000 });
+}
+
+export async function getSimilar(media: MediaType, id: string | number) {
+  return tmdb<TmdbPaged<TmdbShow>>(`/${media}/${id}/similar`, { revalidate: 3600, ttlMs: 3600_000 });
 }
 
 export async function searchMulti(query: string) {
