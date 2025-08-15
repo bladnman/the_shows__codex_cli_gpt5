@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+The Shows — Discover, track, and rate movies & TV.
 
-## Getting Started
+Overview
+- Next.js App Router + TypeScript + Tailwind v4
+- Centralized theme tokens in `theme/tokens.ts` and CSS vars in `app/globals.css`
+- TMDB-powered discovery and search with caching via `fetch` revalidate
+- SQLite (Prisma) for watchlist, watched history, and ratings (anonymous session)
 
-First, run the development server:
+Setup
+- Prereqs: Node 18+, npm
+- Copy `.env.local.example` to `.env.local`
+- Provide TMDB credentials (choose one):
+  - v4 Read Access Token (preferred): set `TMDB_BEARER` (or `TMDB_V4_TOKEN`)
+  - v3 API Key (fallback): set `TMDB_API_KEY`
+- Initialize dev DB: `npm run db:push`
+- Start dev server: `npm run dev` then open http://localhost:3000
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Scripts
+- `npm run dev`: Start Next.js
+- `npm run build` / `npm start`: Build and run
+- `npm run db:push`: Sync Prisma schema to SQLite
+- `npm run db:studio`: Open Prisma Studio
+- `npm test`: Run unit tests (Vitest)
+- `npm run e2e`: Run Playwright E2E (builds + starts server)
+- `npm run e2e:headed`: E2E in headed browser
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Structure (Always Rules)
+- `/app` — routes, each with `features/`, `hooks/`, `utils/` as needed
+- `/components` — generic components (e.g., `ShowCard`, `Stars`)
+- `/lib` — global services (`tmdb.ts`, `db.ts`, `user_state.ts`)
+- `/theme` — `tokens.ts` for design tokens (no hard-coded values in components)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Routes
+- `/` — Trending, Popular, and New sections
+- `/search?q=` — Combined TMDB search
+- `/show/[mediaType]/[id]` — Details + actions (watchlist, watched, rating)
+- `/collections` — Watchlist, Watched, Rated
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Notes
+- Images are served from `image.tmdb.org` (configured in `next.config.ts`).
+- Anonymous user session stored in `anonId` cookie; no auth in MVP.
+- If `TMDB_API_KEY` is missing, discovery/search will error; set it first.
+- E2E relies on live TMDB API. Ensure `TMDB_API_KEY` is set before running.
