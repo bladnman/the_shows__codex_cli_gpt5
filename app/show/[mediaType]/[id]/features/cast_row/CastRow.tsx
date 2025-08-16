@@ -10,7 +10,7 @@ export default function CastRow({ cast, limit = 10 }: { cast: TmdbCast[]; limit?
   if (!list.length) return null;
   return (
     <section className="space-y-[var(--space-3)]">
-      <h2 className="text-lg font-medium">Top Billed Cast</h2>
+      <h2 className="text-lg font-medium pl-[var(--space-3)] border-l-4 border-[color:var(--color-accent)]">Top Billed Cast</h2>
       <div className="flex gap-[var(--space-4)] overflow-x-auto pb-[var(--space-2)]">
         {list.map((p) => {
           const role = p.character || p.roles?.[0]?.character || "";

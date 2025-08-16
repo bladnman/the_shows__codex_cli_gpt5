@@ -12,7 +12,7 @@ export default function InfoPanel({ details, mediaType }: { details: TmdbDetails
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-[var(--space-6)]">
       <div className="space-y-[var(--space-3)]">
-        <h2 className="text-lg font-medium">Details</h2>
+        <h2 className="text-lg font-medium pl-[var(--space-3)] border-l-4 border-[color:var(--color-accent)]">Details</h2>
         <dl className="grid grid-cols-2 gap-x-[var(--space-4)] gap-y-[var(--space-3)] text-sm">
           {release ? (
             <div>
@@ -41,7 +41,7 @@ export default function InfoPanel({ details, mediaType }: { details: TmdbDetails
         </dl>
       </div>
       <div className="space-y-[var(--space-3)]">
-        <h2 className="text-lg font-medium">Production</h2>
+        <h2 className="text-lg font-medium pl-[var(--space-3)] border-l-4 border-[color:var(--color-accent)]">Production</h2>
         <dl className="grid grid-cols-2 gap-x-[var(--space-4)] gap-y-[var(--space-3)] text-sm">
           {details.status ? (
             <div>
@@ -72,4 +72,3 @@ export default function InfoPanel({ details, mediaType }: { details: TmdbDetails
     </section>
   );
 }
-

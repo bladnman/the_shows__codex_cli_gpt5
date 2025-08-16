@@ -4,6 +4,8 @@ import { imageUrl, TmdbDetails, TmdbVideo } from "@/lib/tmdb";
 import TrailerButton from "./TrailerButton";
 import type { ShowEntry } from "@prisma/client";
 
+import AddToListDropdown from "./AddToListDropdown";
+
 export default async function HeaderHero({
   details,
   mediaType,
@@ -24,7 +26,7 @@ export default async function HeaderHero({
   const critics = Math.round(details.vote_average * 10);
 
   return (
-    <section className="relative rounded-[var(--radius-lg)] overflow-hidden border border-[color:var(--color-border)]">
+    <section className="relative -mx-[var(--space-5)] sm:-mx-[var(--space-8)] overflow-hidden">
       {backdrop ? (
         <Image
           src={backdrop}
@@ -39,20 +41,24 @@ export default async function HeaderHero({
       )}
       <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--color-hero-overlay) 0%, var(--color-hero-overlay-soft) 40%, transparent 100%)" }} />
       <div className="absolute inset-x-0 bottom-0 p-[var(--space-6)] sm:p-[var(--space-8)]">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-[var(--space-2)]">{title}</h1>
-        <p className="max-w-3xl text-sm sm:text-base text-[color:var(--color-muted-foreground)] line-clamp-3">
-          {details.overview}
-        </p>
-        <div className="mt-[var(--space-4)] flex flex-wrap items-center gap-[var(--space-3)]">
-          <WatchlistButton tmdbId={details.id} mediaType={mediaType} />
-          <TrailerButton youtubeKey={trailer?.key} disabled={!trailer} />
-          <div className="ml-auto flex items-center gap-[var(--space-3)]">
-            <span aria-label="User score" className="text-xs font-medium px-[var(--space-2)] py-[var(--space-1)] rounded-[var(--radius-full)] bg-[color:var(--color-accent)] text-[color:var(--color-accent-foreground)]">
-              User {entry?.rating ?? "—"}/10
-            </span>
-            <span aria-label="Critics score" className="text-xs font-medium px-[var(--space-2)] py-[var(--space-1)] rounded-[var(--radius-full)] bg-[color:var(--color-accent)] text-[color:var(--color-accent-foreground)]">
-              Critics {critics}%
-            </span>
+        <div className="max-w-screen-2xl mx-auto">
+          <div className="flex items-end gap-[var(--space-6)]">
+            <div className="flex-1 min-w-0">
+              <h1 className="text-3xl sm:text-4xl font-bold text-white mb-[var(--space-2)]">{title}</h1>
+              <p className="max-w-3xl text-sm sm:text-base text-white/80 line-clamp-3">{details.overview}</p>
+              <div className="mt-[var(--space-4)] flex flex-wrap items-center gap-[var(--space-3)]">
+                <AddToListDropdown />
+                <TrailerButton youtubeKey={trailer?.key} disabled={!trailer} />
+              </div>
+            </div>
+            <div className="hidden sm:flex items-center gap-[var(--space-4)]">
+              <div aria-label="User score" className="badge-circle" style={{ width: 44, height: 44, fontSize: 14 }}>
+                {entry?.rating ?? "—"}
+              </div>
+              <div aria-label="Critics score" className="badge-circle" style={{ width: 44, height: 44, fontSize: 14 }}>
+                {critics}
+              </div>
+            </div>
           </div>
         </div>
       </div>
