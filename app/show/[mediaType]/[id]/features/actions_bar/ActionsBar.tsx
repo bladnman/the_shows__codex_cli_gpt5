@@ -1,9 +1,7 @@
-import { get_current_user_id_optional, get_entry } from "@/lib/user_state";
 import { markWatched, setRating } from "@/app/actions/user_state";
+import type { ShowEntry } from "@prisma/client";
 
-export default async function ActionsBar({ tmdbId, mediaType }: { tmdbId: number; mediaType: "movie"|"tv" }) {
-  const userId = await get_current_user_id_optional();
-  const entry = await get_entry(userId, tmdbId, mediaType);
+export default async function ActionsBar({ tmdbId, mediaType, entry }: { tmdbId: number; mediaType: "movie"|"tv"; entry: ShowEntry | null }) {
   const currentRating = entry?.rating ?? 0;
   const watched = !!entry?.watchedAt;
 
@@ -35,4 +33,3 @@ export default async function ActionsBar({ tmdbId, mediaType }: { tmdbId: number
     </section>
   );
 }
-

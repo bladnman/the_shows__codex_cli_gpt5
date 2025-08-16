@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { getWatchProviders } from "@/lib/tmdb";
+import type { TmdbWatchProvidersResponse } from "@/lib/tmdb";
 
-export default async function Providers({ mediaType, id }: { mediaType: "movie"|"tv"; id: number }) {
-  const data = await getWatchProviders(mediaType, id);
-  const country = data.results["US"] || data.results["GB"] || Object.values(data.results)[0];
+export default function Providers({ providers }: { providers: TmdbWatchProvidersResponse }) {
+  const country = providers.results["US"] || providers.results["GB"] || Object.values(providers.results)[0];
   if (!country) return null;
   const list = country.flatrate || country.rent || country.buy || [];
   if (!list.length) return null;
@@ -26,4 +25,3 @@ export default async function Providers({ mediaType, id }: { mediaType: "movie"|
     </section>
   );
 }
-

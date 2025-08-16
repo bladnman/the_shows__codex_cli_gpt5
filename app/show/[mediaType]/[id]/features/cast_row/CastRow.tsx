@@ -1,19 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getCredits } from "@/lib/tmdb";
+import type { TmdbCast } from "@/lib/tmdb";
 
-export default async function CastRow({ mediaType, id, limit = 10 }: { mediaType: "movie"|"tv"; id: number; limit?: number }) {
-  const credits = await getCredits(mediaType, id);
-  const cast = credits.cast
+export default function CastRow({ cast, limit = 10 }: { cast: TmdbCast[]; limit?: number }) {
+  const list = cast
     .slice()
     .sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
     .slice(0, limit);
-  if (!cast.length) return null;
+  if (!list.length) return null;
   return (
     <section className="space-y-[var(--space-3)]">
       <h2 className="text-lg font-medium">Top Billed Cast</h2>
       <div className="flex gap-[var(--space-4)] overflow-x-auto pb-[var(--space-2)]">
-        {cast.map((p) => {
+        {list.map((p) => {
           const role = p.character || p.roles?.[0]?.character || "";
           const avatar = p.profile_path ? `https://image.tmdb.org/t/p/w185${p.profile_path}` : null;
           return (
@@ -32,4 +31,3 @@ export default async function CastRow({ mediaType, id, limit = 10 }: { mediaType
     </section>
   );
 }
-

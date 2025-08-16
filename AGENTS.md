@@ -21,6 +21,19 @@
   * Hooks: `use_snake_case.ts` (`use_show_state.ts`)
   * Utilities/Services: `snake_case.ts`
 
+
+### 2.1. Separation of Concerns
+
+The main interest that I have is that we do not cross concerns in given pieces of software. The idea of separation is to allow one element to only be concerned with its own responsibility. Utilizing things like feature separation, what is traditionally thought of as componentizing, allows us to have a page that has very little actual responsibility except possible coordination responsibilities or data and action responsibilities, but that page itself should not be responsible, for example, for pulling the data. is a unit itself that should be externalized, likely into something like a hook. Functionality, any kind of functional Actions that need to occur should be broken into utils. The reason for this very discrete separation is for a vastly increased testing surface area.
+
+* Ensure software components do not have overlapping responsibilities.
+* Separation allows each element to focus solely on its own tasks.
+* Use feature separation/componentization for clearer structure.
+* Pages should primarily handle coordination or data/action responsibilities, not tasks like data retrieval.
+* Externalize data retrieval, possibly into hooks.
+* Break down functional actions into utility functions (utils).
+* This discrete separation enhances the ability to test individual components effectively.
+
 ---
 
 ## 3. Project Structure

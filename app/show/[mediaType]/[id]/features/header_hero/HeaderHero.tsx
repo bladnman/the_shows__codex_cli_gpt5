@@ -1,26 +1,27 @@
 import Image from "next/image";
 import WatchlistButton from "@/components/actions/WatchlistButton";
-import { imageUrl, getVideos, TmdbDetails } from "@/lib/tmdb";
-import { get_current_user_id_optional, get_entry } from "@/lib/user_state";
+import { imageUrl, TmdbDetails, TmdbVideo } from "@/lib/tmdb";
 import TrailerButton from "./TrailerButton";
+import type { ShowEntry } from "@prisma/client";
 
 export default async function HeaderHero({
   details,
   mediaType,
+  videos,
+  entry,
 }: {
   details: TmdbDetails;
   mediaType: "movie" | "tv";
+  videos: TmdbVideo[];
+  entry: ShowEntry | null;
 }) {
   const title = details.title ?? details.name ?? "Untitled";
   const backdrop = imageUrl(details.backdrop_path, "w780");
-  const videos = await getVideos(mediaType, details.id);
-  const trailer = videos.results.find(
+  const trailer = videos.find(
     (v) => v.site === "YouTube" && (v.type === "Trailer" || v.type === "Teaser") && v.official
-  ) || videos.results.find((v) => v.site === "YouTube");
+  ) || videos.find((v) => v.site === "YouTube");
 
   const critics = Math.round(details.vote_average * 10);
-  const userId = await get_current_user_id_optional();
-  const entry = await get_entry(userId, details.id, mediaType);
 
   return (
     <section className="relative rounded-[var(--radius-lg)] overflow-hidden border border-[color:var(--color-border)]">
