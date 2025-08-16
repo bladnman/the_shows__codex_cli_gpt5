@@ -37,7 +37,7 @@ export default async function HeaderHero({
       ) : (
         <div className="w-full aspect-video bg-[color:var(--color-muted)]" />
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-background)]/90 via-[color:var(--color-background)]/40 to-transparent" />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--color-hero-overlay) 0%, var(--color-hero-overlay-soft) 40%, transparent 100%)" }} />
       <div className="absolute inset-x-0 bottom-0 p-[var(--space-6)] sm:p-[var(--space-8)]">
         <h1 className="text-3xl sm:text-4xl font-bold mb-[var(--space-2)]">{title}</h1>
         <p className="max-w-3xl text-sm sm:text-base text-[color:var(--color-muted-foreground)] line-clamp-3">

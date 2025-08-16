@@ -11,7 +11,7 @@ export default async function WatchlistButton({ tmdbId, mediaType }: { tmdbId: n
         aria-pressed={inList}
         className={`px-[var(--space-3)] py-[var(--space-1)] rounded-[var(--radius-md)] text-sm border transition-colors ${inList ? "bg-[color:var(--color-primary)] text-[color:var(--color-primary-foreground)] border-transparent" : "border-[color:var(--color-border)]"}`}
       >
-        {inList ? "In Watchlist" : "Add to Watchlist"}
+        {inList ? "In List" : "Add to List"}
       </button>
     </form>
   );

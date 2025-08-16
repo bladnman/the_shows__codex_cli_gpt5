@@ -14,6 +14,7 @@ export type ColorTokens = {
   success: string;
   warning: string;
   error: string;
+  heroOverlay: string;
 };
 
 export type TypographyTokens = {
@@ -66,21 +67,22 @@ export type ThemeTokens = {
 
 export const tokens: ThemeTokens = {
   colors: {
-    background: "#0b0b0c",
-    foreground: "#f4f4f5",
-    primary: "#6ee7b7",
-    primaryForeground: "#06281d",
-    secondary: "#94a3b8",
-    secondaryForeground: "#0b0b0c",
-    accent: "#60a5fa",
-    accentForeground: "#051225",
-    muted: "#374151",
-    mutedForeground: "#cbd5e1",
-    border: "#1f2937",
-    ring: "#60a5fa",
-    success: "#22c55e",
+    background: "#ffffff",
+    foreground: "#0b0b0c",
+    primary: "#111827",
+    primaryForeground: "#ffffff",
+    secondary: "#6b7280",
+    secondaryForeground: "#ffffff",
+    accent: "#FF2600",
+    accentForeground: "#ffffff",
+    muted: "#f3f4f6",
+    mutedForeground: "#4b5563",
+    border: "#e5e7eb",
+    ring: "#FF2600",
+    success: "#16a34a",
     warning: "#f59e0b",
     error: "#ef4444",
+    heroOverlay: "rgba(0,0,0,0.85)",
   },
   typography: {
     fontFamilySans: "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -121,4 +123,3 @@ export const tokens: ThemeTokens = {
 };
 
 export type MediaType = "movie" | "tv";
-

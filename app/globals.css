@@ -3,21 +3,23 @@
 /* Design tokens mapped to CSS variables (Always Rules) */
 :root {
   /* Colors */
-  --color-background: #0b0b0c;
-  --color-foreground: #f4f4f5;
-  --color-primary: #6ee7b7;
-  --color-primary-foreground: #06281d;
-  --color-secondary: #94a3b8;
-  --color-secondary-foreground: #0b0b0c;
-  --color-accent: #60a5fa;
-  --color-accent-foreground: #051225;
-  --color-muted: #374151;
-  --color-muted-foreground: #cbd5e1;
-  --color-border: #1f2937;
-  --color-ring: #60a5fa;
-  --color-success: #22c55e;
+  --color-background: #ffffff;
+  --color-foreground: #0b0b0c;
+  --color-primary: #111827;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #6b7280;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #FF2600; /* orange accent from PRD */
+  --color-accent-foreground: #ffffff;
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #4b5563;
+  --color-border: #e5e7eb;
+  --color-ring: #FF2600;
+  --color-success: #16a34a;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
+  --color-hero-overlay: rgba(0,0,0,0.85);
+  --color-hero-overlay-soft: rgba(0,0,0,0.4);
 
   /* Typography */
   --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -80,4 +82,18 @@ body {
   font-family: var(--font-sans);
   font-size: var(--text-base-size);
   line-height: var(--text-line-height);
+}
+
+/* Utility: circular badge (used for ratings) */
+.badge-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  color: var(--color-accent-foreground);
+  border-radius: var(--radius-full);
+  min-width: 28px;
+  min-height: 28px;
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
 }
