@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const disableWebServer = process.env.PW_DISABLE_WEBSERVER === '1';
+
 export default defineConfig({
   testDir: './e2e',
   timeout: 60_000,
@@ -11,7 +13,7 @@ export default defineConfig({
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
   ],
-  webServer: [
+  webServer: disableWebServer ? [] : [
     {
       command: 'npm run build && npm run start',
       url: 'http://localhost:3000',
@@ -20,4 +22,3 @@ export default defineConfig({
     },
   ],
 });
-

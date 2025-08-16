@@ -1,0 +1,411 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "The Shows":
+    - /url: /
+  - navigation:
+    - link "Search":
+      - /url: /search
+    - link "Collections":
+      - /url: /collections
+  - textbox "Quick search"
+- main:
+  - heading "Trending Movies" [level=2]
+  - link "Poster Superman Rating 7.684 out of 10 7.7":
+    - /url: /show/movie/1061474
+    - img "Poster"
+    - heading "Superman" [level=3]
+    - text: "7.7"
+  - button "Add to Watchlist"
+  - link "Poster Weapons Rating 7.7 out of 10 7.7":
+    - /url: /show/movie/1078605
+    - img "Poster"
+    - heading "Weapons" [level=3]
+    - text: "7.7"
+  - button "Add to Watchlist"
+  - link "Poster How to Train Your Dragon Rating 8 out of 10 8":
+    - /url: /show/movie/1087192
+    - img "Poster"
+    - heading "How to Train Your Dragon" [level=3]
+    - text: "8"
+  - button "Add to Watchlist"
+  - link "Poster Eddington Rating 6.7 out of 10 6.7":
+    - /url: /show/movie/648878
+    - img "Poster"
+    - heading "Eddington" [level=3]
+    - text: "6.7"
+  - button "Add to Watchlist"
+  - link "Poster xXx Rating 5.958 out of 10 6":
+    - /url: /show/movie/7451
+    - img "Poster"
+    - heading "xXx" [level=3]
+    - text: "6"
+  - button "Add to Watchlist"
+  - link "Poster Jurassic World Rebirth Rating 6.376 out of 10 6.4":
+    - /url: /show/movie/1234821
+    - img "Poster"
+    - heading "Jurassic World Rebirth" [level=3]
+    - text: "6.4"
+  - button "Add to Watchlist"
+  - link "Poster Fixed Rating 6.7 out of 10 6.7":
+    - /url: /show/movie/537921
+    - img "Poster"
+    - heading "Fixed" [level=3]
+    - text: "6.7"
+  - button "Add to Watchlist"
+  - 'link "Poster Demon Slayer: Kimetsu no Yaiba Infinity Castle Rating 7.2 out of 10 7.2"':
+    - /url: /show/movie/1311031
+    - img "Poster"
+    - 'heading "Demon Slayer: Kimetsu no Yaiba Infinity Castle" [level=3]'
+    - text: "7.2"
+  - button "Add to Watchlist"
+  - link "Poster 28 Years Later Rating 6.84 out of 10 6.8":
+    - /url: /show/movie/1100988
+    - img "Poster"
+    - heading "28 Years Later" [level=3]
+    - text: "6.8"
+  - button "Add to Watchlist"
+  - link "Poster Nobody 2 Rating 7.323 out of 10 7.3":
+    - /url: /show/movie/1007734
+    - img "Poster"
+    - heading "Nobody 2" [level=3]
+    - text: "7.3"
+  - button "Add to Watchlist"
+  - link "Poster Ne Zha 2 Rating 7.983 out of 10 8":
+    - /url: /show/movie/980477
+    - img "Poster"
+    - heading "Ne Zha 2" [level=3]
+    - text: "8"
+  - button "Add to Watchlist"
+  - link "Poster The Pickup Rating 6.584 out of 10 6.6":
+    - /url: /show/movie/1106289
+    - img "Poster"
+    - heading "The Pickup" [level=3]
+    - text: "6.6"
+  - button "Add to Watchlist"
+  - heading "Trending TV" [level=2]
+  - 'link "Poster Alien: Earth Rating 8.024 out of 10 8"':
+    - /url: /show/tv/157239
+    - img "Poster"
+    - 'heading "Alien: Earth" [level=3]'
+    - text: "8"
+  - button "Add to Watchlist"
+  - link "Poster Wednesday Rating 8.406 out of 10 8.4":
+    - /url: /show/tv/119051
+    - img "Poster"
+    - heading "Wednesday" [level=3]
+    - text: "8.4"
+  - button "Add to Watchlist"
+  - link "Poster One Piece Rating 8.724 out of 10 8.7":
+    - /url: /show/tv/37854
+    - img "Poster"
+    - heading "One Piece" [level=3]
+    - text: "8.7"
+  - button "Add to Watchlist"
+  - 'link "Poster Dexter: Resurrection Rating 9.004 out of 10 9"':
+    - /url: /show/tv/259909
+    - img "Poster"
+    - 'heading "Dexter: Resurrection" [level=3]'
+    - text: "9"
+  - button "Add to Watchlist"
+  - 'link "Poster Outlander: Blood of My Blood Rating 9.261 out of 10 9.3"':
+    - /url: /show/tv/207484
+    - img "Poster"
+    - 'heading "Outlander: Blood of My Blood" [level=3]'
+    - text: "9.3"
+  - button "Add to Watchlist"
+  - heading "Popular Movies" [level=2]
+  - link "Poster War of the Worlds Rating 4.194 out of 10 4.2":
+    - /url: /show/movie/755898
+    - img "Poster"
+    - heading "War of the Worlds" [level=3]
+    - text: "4.2"
+  - button "Add to Watchlist"
+  - link "Poster Jurassic World Rebirth Rating 6.376 out of 10 6.4":
+    - /url: /show/movie/1234821
+    - img "Poster"
+    - heading "Jurassic World Rebirth" [level=3]
+    - text: "6.4"
+  - button "Add to Watchlist"
+  - link "Poster Superman Rating 7.7 out of 10 7.7":
+    - /url: /show/movie/1061474
+    - img "Poster"
+    - heading "Superman" [level=3]
+    - text: "7.7"
+  - button "Add to Watchlist"
+  - link "Poster Osiris Rating 6.435 out of 10 6.4":
+    - /url: /show/movie/1241470
+    - img "Poster"
+    - heading "Osiris" [level=3]
+    - text: "6.4"
+  - button "Add to Watchlist"
+  - link "Poster William Tell Rating 6.306 out of 10 6.3":
+    - /url: /show/movie/1195631
+    - img "Poster"
+    - heading "William Tell" [level=3]
+    - text: "6.3"
+  - button "Add to Watchlist"
+  - 'link "Poster Legends of the Condor Heroes: The Gallants Rating 6.41 out of 10 6.4"':
+    - /url: /show/movie/1185528
+    - img "Poster"
+    - 'heading "Legends of the Condor Heroes: The Gallants" [level=3]'
+    - text: "6.4"
+  - button "Add to Watchlist"
+  - 'link "Poster Demon Slayer: Kimetsu no Yaiba Infinity Castle Rating 7.2 out of 10 7.2"':
+    - /url: /show/movie/1311031
+    - img "Poster"
+    - 'heading "Demon Slayer: Kimetsu no Yaiba Infinity Castle" [level=3]'
+    - text: "7.2"
+  - button "Add to Watchlist"
+  - link "Poster Hostile Takeover Rating 7.313 out of 10 7.3":
+    - /url: /show/movie/1319895
+    - img "Poster"
+    - heading "Hostile Takeover" [level=3]
+    - text: "7.3"
+  - button "Add to Watchlist"
+  - link "Poster How to Train Your Dragon Rating 8 out of 10 8":
+    - /url: /show/movie/1087192
+    - img "Poster"
+    - heading "How to Train Your Dragon" [level=3]
+    - text: "8"
+  - button "Add to Watchlist"
+  - link "Poster The Pickup Rating 6.584 out of 10 6.6":
+    - /url: /show/movie/1106289
+    - img "Poster"
+    - heading "The Pickup" [level=3]
+    - text: "6.6"
+  - button "Add to Watchlist"
+  - link "Poster Murder Company Rating 5.6 out of 10 5.6":
+    - /url: /show/movie/1285247
+    - img "Poster"
+    - heading "Murder Company" [level=3]
+    - text: "5.6"
+  - button "Add to Watchlist"
+  - link "Poster Weapons Rating 7.7 out of 10 7.7":
+    - /url: /show/movie/1078605
+    - img "Poster"
+    - heading "Weapons" [level=3]
+    - text: "7.7"
+  - button "Add to Watchlist"
+  - heading "Popular TV" [level=2]
+  - link "Poster Wednesday Rating 8.4 out of 10 8.4":
+    - /url: /show/tv/119051
+    - img "Poster"
+    - heading "Wednesday" [level=3]
+    - text: "8.4"
+  - button "Add to Watchlist"
+  - 'link "Poster Alien: Earth Rating 8.1 out of 10 8.1"':
+    - /url: /show/tv/157239
+    - img "Poster"
+    - 'heading "Alien: Earth" [level=3]'
+    - text: "8.1"
+  - button "Add to Watchlist"
+  - link "Poster Divas Hit the Road Rating 6.571 out of 10 6.6":
+    - /url: /show/tv/121876
+    - img "Poster"
+    - heading "Divas Hit the Road" [level=3]
+    - text: "6.6"
+  - button "Add to Watchlist"
+  - link "Poster Nukitashi the Animation Rating 7.3 out of 10 7.3":
+    - /url: /show/tv/244808
+    - img "Poster"
+    - heading "Nukitashi the Animation" [level=3]
+    - text: "7.3"
+  - button "Add to Watchlist"
+  - link "Poster The Summer I Turned Pretty Rating 8.182 out of 10 8.2":
+    - /url: /show/tv/194766
+    - img "Poster"
+    - heading "The Summer I Turned Pretty" [level=3]
+    - text: "8.2"
+  - button "Add to Watchlist"
+  - link "Poster The Rookie Rating 8.523 out of 10 8.5":
+    - /url: /show/tv/79744
+    - img "Poster"
+    - heading "The Rookie" [level=3]
+    - text: "8.5"
+  - button "Add to Watchlist"
+  - 'link "Poster Law & Order: Special Victims Unit Rating 7.937 out of 10 7.9"':
+    - /url: /show/tv/2734
+    - img "Poster"
+    - 'heading "Law & Order: Special Victims Unit" [level=3]'
+    - text: "7.9"
+  - button "Add to Watchlist"
+  - link "Poster Squid Game Rating 7.863 out of 10 7.9":
+    - /url: /show/tv/93405
+    - img "Poster"
+    - heading "Squid Game" [level=3]
+    - text: "7.9"
+  - button "Add to Watchlist"
+  - link "Poster Grey's Anatomy Rating 8.221 out of 10 8.2":
+    - /url: /show/tv/1416
+    - img "Poster"
+    - heading "Grey's Anatomy" [level=3]
+    - text: "8.2"
+  - button "Add to Watchlist"
+  - link "Poster Dexter Rating 8.214 out of 10 8.2":
+    - /url: /show/tv/1405
+    - img "Poster"
+    - heading "Dexter" [level=3]
+    - text: "8.2"
+  - button "Add to Watchlist"
+  - link "Poster Supernatural Rating 8.298 out of 10 8.3":
+    - /url: /show/tv/1622
+    - img "Poster"
+    - heading "Supernatural" [level=3]
+    - text: "8.3"
+  - button "Add to Watchlist"
+  - link "Poster Butterfly Rating 7.4 out of 10 7.4":
+    - /url: /show/tv/227114
+    - img "Poster"
+    - heading "Butterfly" [level=3]
+    - text: "7.4"
+  - button "Add to Watchlist"
+  - heading "New Movies" [level=2]
+  - link "Poster War of the Worlds Rating 4.157 out of 10 4.2":
+    - /url: /show/movie/755898
+    - img "Poster"
+    - heading "War of the Worlds" [level=3]
+    - text: "4.2"
+  - button "Add to Watchlist"
+  - link "Poster Jurassic World Rebirth Rating 6.376 out of 10 6.4":
+    - /url: /show/movie/1234821
+    - img "Poster"
+    - heading "Jurassic World Rebirth" [level=3]
+    - text: "6.4"
+  - button "Add to Watchlist"
+  - link "Poster Superman Rating 7.7 out of 10 7.7":
+    - /url: /show/movie/1061474
+    - img "Poster"
+    - heading "Superman" [level=3]
+    - text: "7.7"
+  - button "Add to Watchlist"
+  - link "Poster Osiris Rating 6.435 out of 10 6.4":
+    - /url: /show/movie/1241470
+    - img "Poster"
+    - heading "Osiris" [level=3]
+    - text: "6.4"
+  - button "Add to Watchlist"
+  - link "Poster William Tell Rating 6.309 out of 10 6.3":
+    - /url: /show/movie/1195631
+    - img "Poster"
+    - heading "William Tell" [level=3]
+    - text: "6.3"
+  - button "Add to Watchlist"
+  - link "Poster The Pickup Rating 6.549 out of 10 6.5":
+    - /url: /show/movie/1106289
+    - img "Poster"
+    - heading "The Pickup" [level=3]
+    - text: "6.5"
+  - button "Add to Watchlist"
+  - 'link "Poster Legends of the Condor Heroes: The Gallants Rating 6.474 out of 10 6.5"':
+    - /url: /show/movie/1185528
+    - img "Poster"
+    - 'heading "Legends of the Condor Heroes: The Gallants" [level=3]'
+    - text: "6.5"
+  - button "Add to Watchlist"
+  - 'link "Poster Demon Slayer: Kimetsu no Yaiba Infinity Castle Rating 7.2 out of 10 7.2"':
+    - /url: /show/movie/1311031
+    - img "Poster"
+    - 'heading "Demon Slayer: Kimetsu no Yaiba Infinity Castle" [level=3]'
+    - text: "7.2"
+  - button "Add to Watchlist"
+  - link "Poster Hostile Takeover Rating 6.929 out of 10 6.9":
+    - /url: /show/movie/1319895
+    - img "Poster"
+    - heading "Hostile Takeover" [level=3]
+    - text: "6.9"
+  - button "Add to Watchlist"
+  - link "Poster Weapons Rating 7.7 out of 10 7.7":
+    - /url: /show/movie/1078605
+    - img "Poster"
+    - heading "Weapons" [level=3]
+    - text: "7.7"
+  - button "Add to Watchlist"
+  - link "Poster Night Carnage Rating 5.8 out of 10 5.8":
+    - /url: /show/movie/986206
+    - img "Poster"
+    - heading "Night Carnage" [level=3]
+    - text: "5.8"
+  - button "Add to Watchlist"
+  - link "Poster M3GAN 2.0 Rating 7.6 out of 10 7.6":
+    - /url: /show/movie/1071585
+    - img "Poster"
+    - heading "M3GAN 2.0" [level=3]
+    - text: "7.6"
+  - button "Add to Watchlist"
+  - heading "Airing Today" [level=2]
+  - link "Poster Divas Hit the Road Rating 6.571 out of 10 6.6":
+    - /url: /show/tv/121876
+    - img "Poster"
+    - heading "Divas Hit the Road" [level=3]
+    - text: "6.6"
+  - button "Add to Watchlist"
+  - link "Poster Nukitashi the Animation Rating 7.3 out of 10 7.3":
+    - /url: /show/tv/244808
+    - img "Poster"
+    - heading "Nukitashi the Animation" [level=3]
+    - text: "7.3"
+  - button "Add to Watchlist"
+  - link "Poster Kaiju No. 8 Rating 8.6 out of 10 8.6":
+    - /url: /show/tv/207468
+    - img "Poster"
+    - heading "Kaiju No. 8" [level=3]
+    - text: "8.6"
+  - button "Add to Watchlist"
+  - link "Poster Legend of the Female General Rating 10 out of 10 10":
+    - /url: /show/tv/240686
+    - img "Poster"
+    - heading "Legend of the Female General" [level=3]
+    - text: "10"
+  - button "Add to Watchlist"
+  - link "Poster Lord of Mysteries Rating 9.1 out of 10 9.1":
+    - /url: /show/tv/232230
+    - img "Poster"
+    - heading "Lord of Mysteries" [level=3]
+    - text: "9.1"
+  - button "Add to Watchlist"
+  - link "Poster A Record of a Mortal's Journey to Immortality Rating 8.6 out of 10 8.6":
+    - /url: /show/tv/106449
+    - img "Poster"
+    - heading "A Record of a Mortal's Journey to Immortality" [level=3]
+    - text: "8.6"
+  - button "Add to Watchlist"
+  - link "Poster Hello Saturday Rating 6.7 out of 10 6.7":
+    - /url: /show/tv/154770
+    - img "Poster"
+    - heading "Hello Saturday" [level=3]
+    - text: "6.7"
+  - button "Add to Watchlist"
+  - link "Poster Fights Break Sphere Rating 8.3 out of 10 8.3":
+    - /url: /show/tv/79481
+    - img "Poster"
+    - heading "Fights Break Sphere" [level=3]
+    - text: "8.3"
+  - button "Add to Watchlist"
+  - link "Poster Case Closed (Detective Conan) Rating 8 out of 10 8":
+    - /url: /show/tv/30983
+    - img "Poster"
+    - heading "Case Closed (Detective Conan)" [level=3]
+    - text: "8"
+  - button "Add to Watchlist"
+  - link "Poster Beyond the Bar Rating 8.8 out of 10 8.8":
+    - /url: /show/tv/281004
+    - img "Poster"
+    - heading "Beyond the Bar" [level=3]
+    - text: "8.8"
+  - button "Add to Watchlist"
+  - link "Poster Rascal Does Not Dream of Bunny Girl Senpai Rating 8.553 out of 10 8.6":
+    - /url: /show/tv/82739
+    - img "Poster"
+    - heading "Rascal Does Not Dream of Bunny Girl Senpai" [level=3]
+    - text: "8.6"
+  - button "Add to Watchlist"
+  - link "Poster Rent-a-Girlfriend Rating 8.391 out of 10 8.4":
+    - /url: /show/tv/96316
+    - img "Poster"
+    - heading "Rent-a-Girlfriend" [level=3]
+    - text: "8.4"
+  - button "Add to Watchlist"
+- alert
+```
