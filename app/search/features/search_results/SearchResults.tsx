@@ -2,8 +2,17 @@ import { searchMulti, type TmdbShow } from "@/lib/tmdb";
 import { ShowCard } from "@/components/ShowCard";
 
 export default async function SearchResults({ q, media, genre }: { q: string; media: "all"|"movie"|"tv"; genre?: number }) {
-  const data = await searchMulti(q);
-  let filtered: TmdbShow[] = data.results.filter((r): r is TmdbShow => r.media_type === "movie" || r.media_type === "tv");
+  let filtered: TmdbShow[] = [];
+  try {
+    const data = await searchMulti(q);
+    filtered = data.results.filter((r): r is TmdbShow => r.media_type === "movie" || r.media_type === "tv");
+  } catch {
+    return (
+      <div className="text-[color:var(--color-error)] text-sm">
+        There was a problem searching. Please try again.
+      </div>
+    );
+  }
   if (media !== "all") {
     filtered = filtered.filter((r) => (r.media_type ?? "all") === media);
   }

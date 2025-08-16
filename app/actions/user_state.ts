@@ -32,7 +32,9 @@ export async function toggleWatchlist(tmdbId: number, mediaType: "movie"|"tv") {
   } else {
     await prisma.showEntry.update({ where: { userId_tmdbId_mediaType: { userId, tmdbId, mediaType } }, data: { watchlist: !existing.watchlist } });
   }
+  // Update homepage cards and the current detail page
   revalidatePath("/");
+  revalidatePath(`/show/${mediaType}/${tmdbId}`);
 }
 
 export async function markWatched(tmdbId: number, mediaType: "movie"|"tv") {
@@ -47,11 +49,21 @@ export async function markWatched(tmdbId: number, mediaType: "movie"|"tv") {
 
 export async function setRating(tmdbId: number, mediaType: "movie"|"tv", rating: number) {
   const userId = await getUserId();
-  const r = Math.max(1, Math.min(10, Math.round(rating)));
-  await prisma.showEntry.upsert({
-    where: { userId_tmdbId_mediaType: { userId, tmdbId, mediaType } },
-    create: { userId, tmdbId, mediaType, rating: r },
-    update: { rating: r },
-  });
+  const n = Math.round(rating);
+  if (n <= 0) {
+    // Clear rating
+    await prisma.showEntry.upsert({
+      where: { userId_tmdbId_mediaType: { userId, tmdbId, mediaType } },
+      create: { userId, tmdbId, mediaType, rating: null },
+      update: { rating: null },
+    });
+  } else {
+    const r = Math.max(1, Math.min(10, n));
+    await prisma.showEntry.upsert({
+      where: { userId_tmdbId_mediaType: { userId, tmdbId, mediaType } },
+      create: { userId, tmdbId, mediaType, rating: r },
+      update: { rating: r },
+    });
+  }
   revalidatePath(`/show/${mediaType}/${tmdbId}`);
 }

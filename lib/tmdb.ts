@@ -189,9 +189,9 @@ export async function getSimilar(media: MediaType, id: string | number) {
 }
 
 export async function searchMulti(query: string) {
-  const url = new URL(`${TMDB_BASE}/search/multi`);
-  url.searchParams.set("query", query);
-  return tmdb<TmdbPaged<TmdbShow>>(url.pathname + "?" + url.searchParams.toString(), { revalidate: 60, ttlMs: 60_000 });
+  const q = encodeURIComponent(query);
+  // Important: pass a path relative to TMDB_BASE without duplicating "/3".
+  return tmdb<TmdbPaged<TmdbShow>>(`/search/multi?query=${q}`, { revalidate: 60, ttlMs: 60_000 });
 }
 
 export type Genre = { id: number; name: string };
